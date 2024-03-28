@@ -3,20 +3,10 @@ This is an example of using [elm-pages 3.0](https://elm-pages.com) with [Fastify
 
 You can see it running at https://elm-pages-v3-fastify.fly.dev/
 
-See the discussion on elm-pages-v3 adapters at <https://github.com/dillonkearns/elm-pages/discussions/378>
+See the discussion on elm-pages adapters at <https://github.com/dillonkearns/elm-pages/discussions/378>
 
 ## Fastify Adapter for elm-pages
 The Fastify adapter is located in `adapters/fastify/adapter.mjs` plays an important role during the build process. It combines the `elm-pages` renderer, Fastify plugin, and server components, placing them into the `dist-server/` directory. You can find detailed information about `elm-pages` adapters at https://elm-pages.com/docs/adapters/.
-
-After executing the npm run build command, the adapter generates the following key files:
-
-dist-server/server.mjs: This file contains a Node.js Fastify server configured specifically for Elm-Pages. To run the server, you can use the command node dist-server/server.mjs. We've set up the repository to start the server using npm start for your convenience.
-
-dist-server/middleware.mjs: This file exports a default function, serving as a way to integrate the Elm-Pages app into Fastify via middleware. This is especially useful if you want to incorporate the generated server into your existing Fastify service or if the generated server doesn't fully meet your requirements.
-
-An important consideration: Any routes you intend to exclude from Elm-Pages' control must be defined before this middleware. Additionally, make sure to direct the Fastify static middleware to the dist directory.
-
-`adapters/fastify/adapter.mjs` runs at build time and puts the elm-pages renderer and Fastify plugin and server into `dist-server/`. See <https://elm-pages.com/docs/adapters/> for details on elm-pages adapters.
 
 After `npm run build`, the adapter will have generated the following files:
 
