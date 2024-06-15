@@ -1,5 +1,6 @@
 import Fastify from "fastify";
 import fastifyStatic from "@fastify/static";
+import fastifyFormbody from "@fastify/formbody";
 import path from "path";
 import elmPagesPlugin from "./plugin.mjs";
 
@@ -8,6 +9,8 @@ const port = process.env.PORT || 3000;
 const root = path.join(path.dirname(new URL(import.meta.url).pathname), '..', 'dist');
 
 fastify.register(elmPagesPlugin);
+fastify.register(fastifyFormbody)
+
 fastify.register(fastifyStatic, { root });
 
 fastify.setErrorHandler((error, request, reply) => {
