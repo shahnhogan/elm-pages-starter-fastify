@@ -10,7 +10,7 @@ const requestToElmPagesJson = (request) => {
         method,
         headers,
         rawUrl,
-        body: isFormData(headers) ? toFormData(body) : JSON.stringify(body) || null,
+        body: body && isFormData(headers) ? toFormData(body) : body && JSON.stringify(body) || null,
         multiPartFormData: null,
     };
 };
