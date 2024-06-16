@@ -1,5 +1,5 @@
 # elm-pages-starter-fastify
-This is an example of using [elm-pages 3.0](https://elm-pages.com) with [Fastify](https://fastify.dev).
+This is an example of using [elm-pages](https://elm-pages.com) with [Fastify](https://fastify.dev).
 
 You can see it running at https://elm-pages-v3-fastify.fly.dev/
 
